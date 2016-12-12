@@ -11,10 +11,16 @@ class App extends Component {
         super(props, context);
 
         var defaultState = {
-            playerType: 'youtube', // youtube, facebook
-            videoId: 'M7lc1UVf-VE',
+            playerType: 'facebook', // youtube, facebook
             items: getProducts(),
-            visibleItems: {}
+            visibleItems: {},
+            youtube: {
+                videoId: 'M7lc1UVf-VE'
+            },
+            facebook: {
+                appId: '1387612367918462',
+                videoId: '10153231379946729'
+            }
         };
 
         this.state = defaultState;
@@ -38,12 +44,13 @@ class App extends Component {
 
     render() {
         var player = null;
-        switch (this.playerType){
+        switch (this.state.playerType){
             case 'facebook':
-                player = <FacebookPlayerWrap {...this.state} onUpdateHandler={this._getUpdatedState} />
+                player = <FacebookPlayerWrap {...this.state} onUpdateHandler={this._getUpdatedState} />;
                 break
             default:
-                player = <Player {...this.state} onUpdateHandler={this._getUpdatedState} />
+                player = <Player {...this.state} onUpdateHandler={this._getUpdatedState} />;
+                break;
         }
 
         return (

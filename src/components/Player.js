@@ -15,7 +15,7 @@ export default class Player extends Component {
     }
 
     componentDidMount() {
-    	this.loadPlayer(this.props.videoId);
+    	this.loadPlayer(this.props.youtube.videoId);
     }
 
     loadPlayer = (videoId) => {

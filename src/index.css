@@ -12,8 +12,14 @@ body {
 	overflow: hidden;
 	background-color: #000;
 }
-.module-wrapper iframe {
+.module-wrapper iframe,
+.module-wrapper .video-wrapper {
 	float: left;
+}
+
+.fvid-wrapper {
+	width: 50%;
+	height: auto;
 }
 
 .list-wrapper {
