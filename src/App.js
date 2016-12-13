@@ -11,11 +11,12 @@ class App extends Component {
         super(props, context);
 
         var defaultState = {
+            goTo: 0,
             playerType: 'facebook', // youtube, facebook
             items: getProducts(),
             visibleItems: {},
             youtube: {
-                videoId: 'M7lc1UVf-VE'
+                videoId: 'scWpXEYZEGk'
             },
             facebook: {
                 appId: '1387612367918462',

@@ -14,6 +14,13 @@ export default class FacebookPlayerWrap extends Component {
         this.state = defaultState;
     }
 
+    componentWillUpdate(nextProps, nextState) {
+        if(!!this.state.player && !!nextProps.goTo){
+            //this.state.player.pause();
+            this.state.player.seek(nextProps.goTo);
+        }
+    }
+
     onReady = (id, player) => {
         this.setState({
             player: player
@@ -106,7 +113,7 @@ export default class FacebookPlayerWrap extends Component {
     render() {
         const { videoId, appId } = this.props.facebook;
         return (
-            <div className="video-wrapper fvid-wrapper"><FacebookPlayer appId={appId} videoId={videoId} autoplay="true" onReady={this.onReady} onStartedPlaying={this.onPlay} onPaused={this.onPause} onStartedBuffering={this._noop} onFinishedBuffering={this._noop} /></div>
+            <div className="video-wrapper fvid-wrapper"><FacebookPlayer appId={appId} videoId={videoId} autoplay="true" onReady={this.onReady} onStartedPlaying={this.onPlay} onPaused={this.onPause} onStartedBuffering={this._noop} onFinishedBuffering={this._noop} onFinishedPlaying={this._noop} /></div>
         );
     }
 }

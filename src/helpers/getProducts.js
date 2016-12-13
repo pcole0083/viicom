@@ -20,20 +20,20 @@ export default function getProducts() {
     var items = {};
     if(!!testFlag){
     	items = {
-    		"10": {
+    		"8": {
 	    		id: '1001',
-	    		name: 'TEST PRODUCT 1',
+	    		name: 'Painter\'s Easel',
 	    		sku: 'TEST1001',
 	    		price: 10.00,
-	    		imgURL: '',
+	    		imgURL: 'easel.png',
 	    		product_subtotal: 100.00 
 	    	},
-	    	"20": {
+	    	"12": {
 	    		id: '2002',
-	    		name: 'TEST PRODUCT 2',
+	    		name: 'Tape Deck',
 	    		sku: 'TEST2002',
 	    		price: 20.00,
-	    		imgURL: '',
+	    		imgURL: 'tapedeck.png',
 	    		product_subtotal: 200.00 
 	    	}
 	    };
